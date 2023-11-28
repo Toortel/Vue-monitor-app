@@ -8,6 +8,7 @@ import vuetify from "./plugins/vuetify";
 Vue.config.productionTip = false;
 
 new Vue({
+  data: { loading: false },
   router,
   store,
   vuetify,

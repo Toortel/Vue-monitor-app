@@ -10,6 +10,7 @@ export default new Vuex.Store({
   state: {
     deviceData: [],
     rangeOfDate: [],
+    isPageLoading: false,
   },
   getters,
   mutations,

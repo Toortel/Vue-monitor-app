@@ -6,4 +6,7 @@ export default {
   setRangeOfDate(state, value) {
     state.rangeOfDate = value;
   },
+  setPageLoadingState(state, value) {
+    state.isPageLoading = value;
+  },
 };

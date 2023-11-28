@@ -116,39 +116,24 @@ export default {
         }
 
         // FINAL ASSIGNMENTS
+        const pressure = {
+          x: pressX,
+          y: pressY,
+          type: "scatter",
+          name: this.$t("pressure"),
+        };
+        const temperature = {
+          x: tempX,
+          y: tempY,
+          type: "scatter",
+          name: this.$t("temperature"),
+        };
         if (this.temperatureData && this.pressureData) {
-          this.parsedData = [
-            {
-              x: pressX,
-              y: pressY,
-              type: "scatter",
-              name: this.$t("pressure"),
-            },
-            {
-              x: tempX,
-              y: tempY,
-              type: "scatter",
-              name: this.$t("temperature"),
-            },
-          ];
+          this.parsedData = [pressure, temperature];
         } else if (this.temperatureData && !this.pressureData) {
-          this.parsedData = [
-            {
-              x: tempX,
-              y: tempY,
-              type: "scatter",
-              name: this.$t("temperature"),
-            },
-          ];
+          this.parsedData = [temperature];
         } else if (!this.temperatureData && this.pressureData) {
-          this.parsedData = [
-            {
-              x: pressX,
-              y: pressY,
-              type: "scatter",
-              name: this.$t("pressure"),
-            },
-          ];
+          this.parsedData = [pressure];
         }
       }
     },

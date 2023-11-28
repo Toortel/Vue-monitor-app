@@ -38,8 +38,17 @@
       </v-list>
     </v-navigation-drawer>
     <v-main>
-      <transition name="fade" mode="out-in">
-        <router-view />
+      <v-container v-if="isLoading" fluid fill-height>
+        <v-layout align-center justify-center>
+          <v-progress-circular
+            indeterminate
+            :size="70"
+            color="primary"
+          ></v-progress-circular>
+        </v-layout>
+      </v-container>
+      <transition v-else name="fade" mode="out-in">
+        <router-view></router-view>
       </transition>
     </v-main>
   </v-app>
@@ -73,6 +82,9 @@ export default {
     },
     currentRoute() {
       return this.$route.path;
+    },
+    isLoading() {
+      return this.$store.getters.getPageLoadingState;
     },
   },
 };

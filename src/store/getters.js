@@ -6,4 +6,7 @@ export default {
   getRangeOfDate(state) {
     return state.rangeOfDate;
   },
+  getPageLoadingState(state) {
+    return state.isPageLoading;
+  },
 };

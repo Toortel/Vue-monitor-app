@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import ErrorView from "../views/ErrorView.vue";
+import store from "@/store";
 
 Vue.use(VueRouter);
 
@@ -13,17 +15,13 @@ const routes = [
   {
     path: "/analytics",
     name: "Analytics",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "Analytics" */ "../views/AnalyticsView.vue"),
   },
   {
     path: "*",
     name: "Not Found",
-    component: () =>
-      import(/* webpackChunkName: "Not Found" */ "../views/ErrorView.vue"),
+    component: ErrorView,
   },
 ];
 
@@ -31,6 +29,17 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+});
+
+// eslint-disable-next-line
+router.beforeEach((to, from, next) => {
+  store.commit("setPageLoadingState", true);
+  next();
+});
+
+// eslint-disable-next-line
+router.afterEach((to, from, next) => {
+  store.commit("setPageLoadingState", false);
 });
 
 export default router;

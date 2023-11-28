@@ -1,24 +1,21 @@
 # vue-monitor-app
 
-## Project setup
+## Install dependencies
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compilation and hot-reload for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compile and minify for production
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Fix files with lint
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -4,6 +4,8 @@ import i18n from "./locales/i18n";
 import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
+import "./registerServiceWorker";
+import "./registerServiceWorker";
 
 Vue.config.productionTip = false;
 

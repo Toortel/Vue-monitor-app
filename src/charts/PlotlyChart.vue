@@ -43,8 +43,6 @@ export default {
           tickformat: "%Y-%m-%d",
           tickangle: 45,
         },
-        alegend: { orientation: "h", y: -0.05 },
-        legend: { orientation: "h" },
       },
     };
   },

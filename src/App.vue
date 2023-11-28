@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar color="blue accent-5" dense dark app>
+    <v-app-bar color="blue darken-3" dense dark app>
       <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>MonitorApp - {{ this.$route.name }}</v-toolbar-title>

@@ -22,4 +22,9 @@ export default {
   homeMsgTwo: "Aby przejść do sekcji analityki użyj przycisku poniżej.",
   homeBtn: "Do analityki",
   langSelector: "Wybierz język",
+  itemsPerPageText: "Ilość elementów na stronie:",
+  itemsPerPageAllText: "Wszystkie",
+  pageText: "z",
+  dateJoin: " do ",
+  selectedDateText: "wybrane",
 };

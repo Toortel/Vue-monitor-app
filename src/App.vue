@@ -38,7 +38,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-main>
-      <v-container v-if="isLoading" fluid fill-height>
+      <v-container v-if="isLoading" fill-height>
         <v-layout align-center justify-center>
           <v-progress-circular
             indeterminate

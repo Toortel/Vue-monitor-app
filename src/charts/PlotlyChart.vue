@@ -37,7 +37,12 @@ export default {
       defaultLayout: {
         autosize: true,
         yaxis: { title: this.$t("values") },
-        xaxis: { type: "date", title: this.$t("date"), tickformat: "%Y-%m-%d" },
+        xaxis: {
+          type: "date",
+          title: this.$t("date"),
+          tickformat: "%Y-%m-%d",
+          tickangle: 45,
+        },
         alegend: { orientation: "h", y: -0.05 },
         legend: { orientation: "h" },
       },

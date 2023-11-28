@@ -23,4 +23,9 @@ export default {
     "To redirect to the analytics section of this app using button below.",
   homeBtn: "Go to analytics",
   langSelector: "Choose language",
+  itemsPerPageText: "Items per page:",
+  itemsPerPageAllText: "All",
+  pageText: "of",
+  dateJoin: " to ",
+  selectedDateText: "selected",
 };

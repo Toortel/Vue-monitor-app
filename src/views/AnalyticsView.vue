@@ -19,7 +19,11 @@
               v-on="on"
             ></v-text-field>
           </template>
-          <v-date-picker v-model="dates" range
+          <v-date-picker
+            v-model="dates"
+            range
+            :locale="$i18n.locale"
+            :selected-items-text="'{0} ' + $t('selectedDateText')"
             ><v-spacer></v-spacer>
             <v-btn text color="primary" @click="menu = false">{{
               $t("cancel")
@@ -39,10 +43,19 @@
           v-model="selectedRecords"
           show-select
           dense
-          :headers="headers"
+          :headers="[
+            { text: this.$t('tableName'), value: 'name' },
+            { text: this.$t('tableValue'), value: 'value' },
+            { text: this.$t('tableDate'), value: 'date' },
+          ]"
           :items="filteredData.length === 0 ? deviceData : filteredData"
           item-key="date"
           class="elevation-1 ma-5"
+          :footer-props="{
+            itemsPerPageText: $t('itemsPerPageText'),
+            itemsPerPageAllText: $t('itemsPerPageAllText'),
+            pageText: `{0} - {1} ${$t('pageText')} {2}`,
+          }"
         ></v-data-table>
       </v-col>
       <v-col xs12 md6>
@@ -83,11 +96,7 @@ export default {
       dates: [],
       filteredData: [],
       menu: false,
-      headers: [
-        { text: this.$t("tableName"), value: "name" },
-        { text: this.$t("tableValue"), value: "value" },
-        { text: this.$t("tableDate"), value: "date" },
-      ],
+      // headers for v-data-table are placed directly in component due to problem with their reactivity when switching language
     };
   },
   methods: {
@@ -124,7 +133,7 @@ export default {
   },
   computed: {
     rangeText() {
-      return this.$store.getters.getRangeOfDate.join(" to ");
+      return this.$store.getters.getRangeOfDate.join(this.$t("dateJoin"));
     },
     deviceData() {
       return this.$store.getters.getDeviceData;
